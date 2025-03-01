@@ -1,10 +1,10 @@
 .PHONY: build test clean
 
 build:
-	go build -o dist/TextConvertor -buildmode=c-shared src/TextConvertor.go
+	go build -o TextConvertor -buildmode=c-shared TextConvertor.go
 
 test:
-	cd dist && python3 test.py
+	python3 test.py
 
 clean:
 	rm -f TextConvertor TextConvertor.h

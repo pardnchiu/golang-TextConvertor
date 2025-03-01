@@ -80,6 +80,7 @@ extern "C" {
 #endif
 
 extern char* convert(char* input);
+extern void freeString(char* ptr);
 extern void Init();
 
 #ifdef __cplusplus

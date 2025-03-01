@@ -10,6 +10,7 @@ import (
 	"os"
 	"regexp"
 	"strings"
+	"unsafe"
 )
 
 var dic map[string]string
@@ -61,6 +62,11 @@ func convert(input *C.char) *C.char {
 	}
 
 	return C.CString(text)
+}
+
+//export freeString
+func freeString(ptr *C.char) {
+	defer C.free(unsafe.Pointer(ptr))
 }
 
 //export Init
